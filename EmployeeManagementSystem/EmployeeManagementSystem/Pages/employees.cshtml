@@ -1,0 +1,51 @@
+﻿@page
+@model EmployeeManagementSystem.Pages.employeesModel
+@{
+}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Forename</th>
+            <th>Surname</th>
+            <th>Date of Birth</th>
+            <th>National Insurance Number</th>
+            <th>Mobile Number</th>
+            <th>Address Details</th>
+            <th>Next of Kin Address</th>
+            <th>Terms & Conditions Accepted</th>
+            @* <th>Photo/Document</th> *@
+            <th>Result</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listEmployees)
+        {
+            <tr>
+                <td>@item.title</td>
+                <td>@item.forename</td>
+                <td>@item.surname</td>
+                <td>@item.dateOfBirth</td>
+                <td>@item.nationalInsuranceNumber</td>
+                <td>@item.mobileNumber</td>
+                <td>@item.addressDetails</td>
+                <td>@item.nextOfKinAddressDetails</td>
+                <td>
+                    @if (item.termsAndConditionsAccepted == "1")
+                    {
+                        <p>Yes</p>
+                    }
+                    else
+                    {
+                        <p>No</p>
+                    }
+                </td>
+               @*  <td>@item.photoOrDocument</td> *@
+                <td>@item.result</td>
+            </tr>
+        }
+    </tbody>
+</table>

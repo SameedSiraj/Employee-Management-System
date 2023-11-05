@@ -1,0 +1,96 @@
+﻿@page
+@model EmployeeManagementSystem.Pages.CreateModel
+@{
+}
+
+
+<br>
+
+<h2> New Employee </h2>
+
+<form method="POST">
+
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Title</label>
+        <div class="col-sm-6">
+            <select class="form-control" name="title">
+                <option value="Mr.">Mr.</option>
+                <option value="Mrs.">Mrs.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Dr.">Dr.</option>
+            </select>
+        </div>
+    </div>
+
+     <div class ="row mb-3">
+        <label class="col-sm-3 col-form-label">Forename</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="forename" value="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Surname</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="surname" value="" />
+        </div>
+    </div>
+     <div class ="row mb-3">
+        <label class="col-sm-3 col-form-label">Date Of Birth</label>
+        <div class="col-sm-6">
+            <input type="date" class="form-control" name="dateofbirth" value="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">UK National Insurance Number</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="nationalInsuranceNumber" value="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">UK Mobile Number</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="mobileNumber" value="" />
+        </div>
+    </div>
+     <div class ="row mb-3">
+        <label class="col-sm-3 col-form-label">UK Address Details</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="addressDetails" value="" />
+        </div>
+    </div>
+     <div class ="row mb-3">
+        <label class="col-sm-3 col-form-label">UK Address Details of Next Of Kin</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="nextOfKinAddressDetails" value="" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Mandatory Terms and Conditions</label>
+        <div class="col-sm-6">
+            <input type="checkbox" class="form-check-input" name="termsAndConditions" value="yes" />
+        </div>
+    </div>
+
+@*     <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Upload Photo</label>
+        <div class="col-sm-6">
+            <input type="file" class="form-control" name="imageUpload" accept="image/*" />
+        </div>
+    </div> *@
+
+    @if (Model.successMessage.Length > 0)
+    {
+        <div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>@Model.successMessage</strong>
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+</form>
